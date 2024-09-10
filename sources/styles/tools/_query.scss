@@ -1,0 +1,25 @@
+@use "sass:map";
+
+//  M I X I N S
+//  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// Function to selector color
+@function clr($key) {
+  @return map.get($colors, $key);
+}
+
+@function spacing($key) {
+  @return map.get($spaces, $key);
+}
+
+@function radius($key) {
+  @return map.get($radius, $key);
+}
+
+@function font($key) {
+  @return map.get($fonts, $key);
+}
+
+@function prefix($key) {
+  @return map.get($prefixes, $key);
+}

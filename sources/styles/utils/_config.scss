@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "sass:math";
+
+// Grid
+$debgrid: true;
+// Fonts
+$assets-path: "/" !default;
+$global-font-file-formats: "woff2", "woff" !default;
+$font-size-base: 16;
+$font-size-percent: #{math.div(100, $font-size-base) * 10%};
+
+$prefixes: (
+  'color': '-clr',
+  'bg': '-bg',
+  'typo': 'tx-',
+  'radius': 'br-',
+  'mgb': 'mb-',
+  'mgt': 'mt-',
+  'width': 'wd-',
+  'display': 'dp-',
+  'col': 'col-',
+  'offset': 'offset-',
+);
+
+$columns: map.get($grid, 'columns');
+$gutter: map.get($grid, 'gutter');
+
+$screen: 'only screen'; 
+$index: 0px;
+@each $name, $size in $breakpoints {
+  $breakpoints: map.set($breakpoints, $name, (
+      'value': $size,
+      'up': '#{$screen} and (min-width: #{$index})', 
+      'only': '#{$screen} and (min-width:#{$index}) and (max-width:#{$size})',
+      'down': '#{$screen} and (max-width: #{$size})',
+      index: index($breakpoints, $name $size) - 1
+  ));
+  $index: $size + 1px;
+}

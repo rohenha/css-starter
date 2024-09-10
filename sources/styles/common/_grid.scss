@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "sass:math";
+
+.row {
+  --col: 24;
+
+  border: 1px solid red;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(map.get($grid, 'columns'), 1fr);
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  @if map.has-key($grid, 'gutter') {
+    gap: 0 map.get($grid, 'gutter');
+  }
+  @if map.has-key($grid, 'max-width') {
+    max-width: map.get($grid, 'max-width');
+  }
+  @if map.has-key($grid, 'padding') {
+    padding: 0 map.get($grid, 'padding');
+  }
+  margin: 0 auto;
+
+  &.-xl {
+    max-width: 100%;
+  }
+
+  > * {
+    // grid-column-end: span var(--col, auto);
+    grid-column: var(--offset, auto) / span var(--col, auto);
+  }
+}
+
+$columns: map.get($grid, 'columns');
+@each $key, $breakpoint in $breakpoints {
+  $index: map.get($breakpoint, 'index');
+  $prefix: if($index == 0, '', "#{$key}-");
+  @include media($key, 'up') {
+    @for $i from 0 through $columns {
+      .#{$prefix}#{prefix('col')}#{$i} {
+        --col: #{$i};
+      }
+      @if $i < $columns {
+        .#{$prefix}#{prefix('offset')}#{$i} {
+          --offset: #{$i + 1};
+        }
+      }
+    }
+  }
+}

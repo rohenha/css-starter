@@ -1,0 +1,43 @@
+:root {
+  // Fonts
+  // --font-regular: #{$font-regular};
+  // --font-title: #{$font-title};
+  // Animations
+  // --anim-duration: .25s;
+  // --anim-easing: #{$p1easeinout};
+}
+
+html {
+  font-size: $font-size-percent;
+  background-color: clr('primary');
+  color: clr('black');
+  font-weight: normal;
+  font-family: $font-regular;
+  scroll-behavior: initial;
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+  /* stylelint-disable-next-line property-no-unknown */
+  font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricprecision;
+}
+
+img {
+  max-width: 100%;
+}
+
+// @include media('lg', 'down') {
+//   html {
+//     background-color: red;
+//   }
+// }
+
+.test {
+  height: 100px;
+}

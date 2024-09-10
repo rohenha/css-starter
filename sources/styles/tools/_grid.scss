@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "sass:math";
+
+/// calculate col percent
+///
+/// @param {integer (unitless)} $col
+///   The number of col width
+/// @return {number (percent)} `col percent`.
+@function col($col) {
+  @return math.div(round(math.div(100%, $columns) * $col * 1000), 1000);
+}
+
+/// calculate col percent in subrow
+///
+/// @param {integer (unitless)} $col
+///   The number of col width
+/// @param {integer (unitless)} $container
+///   The number of the subgrid
+/// @return {number (percent)} `col percent`.
+@function subcol($col, $container) {
+  @return 100% * math.div($col, $container);
+}

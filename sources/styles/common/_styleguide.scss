@@ -1,0 +1,103 @@
+@use "sass:map";
+
+// Colors
+@each $name, $value in $colors {
+  .#{prefix('color')}#{$name} {
+    color: clr($name);
+  }
+  .#{prefix('bg')}#{$name} {
+    background-color: clr($name);
+  }
+}
+
+@each $key, $breakpoint in $breakpoints {
+  $index: map.get($breakpoint, 'index');
+  $prefix: if($index == 0, '', "#{$key}-");
+  @include media($key, 'up') {
+
+    // Typographies
+    @each $name, $style in $fonts-styles {
+      @if map.has-key($style, $key) {
+        .#{$prefix}#{prefix('typo')}#{$name} {
+          $attrs: map.get($style, $key);
+          @each $decla, $attr in $attrs {
+            #{$decla}: $attr;
+          }
+        }
+      }
+    }
+    
+    // Border radius
+    @each $name, $value in $radius {
+      .#{$prefix}#{prefix('radius')}#{$name} {
+        border-radius: $value;
+      }
+    }
+    
+    // Margin
+    @each $name, $value in $spaces {
+      .#{$prefix}#{prefix('mgb')}#{$name} {
+        margin-bottom: $value;
+      }
+      .#{$prefix}#{prefix('mgt')}#{$name} {
+        margin-top: $value;
+      }
+    }
+
+    // Widths
+    .#{$prefix}#{prefix('width')}25 {
+      width: 25%;
+      max-width: 25%;
+    }
+
+    .#{$prefix}#{prefix('width')}33 {
+      width: 33.333%;
+      max-width: 33.333%;
+    }
+
+    .#{$prefix}#{prefix('width')}50 {
+      width: 50%;
+      max-width: 50%;
+    }
+
+    .#{$prefix}#{prefix('width')}66 {
+      width: 66.666%;
+      max-width: 66.666%;
+    }
+
+    .#{$prefix}#{prefix('width')}75 {
+      width: 75%;
+      max-width: 75%;
+    }
+
+    .#{$prefix}#{prefix('width')}100 {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .#{$prefix}#{prefix('display')}block {
+      display: block;
+    }
+
+    .#{$prefix}#{prefix('display')}grid {
+      display: grid;
+    }
+
+    .#{$prefix}#{prefix('display')}flex {
+      display: flex;
+    }
+
+    .#{$prefix}#{prefix('display')}inlblock {
+      display: inline-block;
+    }
+
+    .#{$prefix}#{prefix('display')}inl {
+      display: inline;
+    }
+
+    .#{$prefix}#{prefix('display')}none {
+      display: none;
+    }
+  }
+}
+
