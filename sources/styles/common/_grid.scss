@@ -2,9 +2,8 @@
 @use "sass:math";
 
 .row {
-  --col: 24;
+  --col: #{map.get($grid, 'columns')};
 
-  border: 1px solid red;
   position: relative;
   display: grid;
   grid-template-columns: repeat(map.get($grid, 'columns'), 1fr);

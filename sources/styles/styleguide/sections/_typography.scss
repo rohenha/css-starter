@@ -1,0 +1,46 @@
+@use "sass:map";
+
+.o-stlgTypo {
+
+  &__fonts {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--smd);
+  }
+
+  &__styles {
+    display: flex;
+    flex-flow: column wrap;
+    gap: var(--smd);
+  }
+}
+
+.m-stlgFont {
+  border: 1px solid var(--cborder);
+  border-radius: var(--radius);
+  text-align: center;
+  padding: var(--smd);
+
+  &__font {
+    font-size: 15.5rem;
+    line-height: 1;
+    margin-bottom: var(--smd);
+  }
+}
+
+.m-stlgFontStyle {
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--sxs);
+
+  &__label {
+    text-transform: uppercase;
+    color: var(--cgray);
+  }
+  &__text {}
+
+  // .m-stlgTags {
+  //   margin-top: var(--sxs);
+  // }
+  // &__text {}
+}

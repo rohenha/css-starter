@@ -1,0 +1,17 @@
+.a-stlgColor {
+  &__color {
+    border: 1px solid var(--cborder);
+    border-radius: var(--radius);
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: var(--ssm);
+  }
+
+  .tx-tp {
+    span {
+      margin-top: var(--sxs);
+      display: block;
+      color: var(--cgray);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "sass:map";
+
+.m-stlgSection {  
+  &__type {
+    width: 100%;
+    color: var(--cblack);
+    padding-bottom: var(--smd);
+    border-bottom: 1px solid var(--cborder);
+  }
+
+  &__entry {
+    display: grid;
+    row-gap: var(--smd);
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--sxl);
+  }
+}
+
+.m-stlgSectionHead {
+  padding-top: var(--slg);
+  padding-bottom: var(--slg);;
+  background-color: var(--cl2primary);
+  color: var(--cblack);
+  &:not(:last-child) {
+    margin-bottom: var(--sxl);
+  }
+
+  &__subtitle {
+    color: var(--cgray);
+    text-transform: uppercase;
+  }
+
+  .m-stlgTags {
+    margin-top: var(--ssm);
+  }
+
+  &__text {
+    margin-top: var(--smd);
+    color: var(--cgray);
+    max-width: 50%;
+  }
+}
+
+.m-stlgTags {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

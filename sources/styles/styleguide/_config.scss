@@ -1,0 +1,30 @@
+:root {
+  // Colors
+  --cprimary: #2e3192;
+  --cl1primary: #abaeff;
+  // --cl1primary: #abaeff;
+  --cl2primary: #e7e7ff;
+  --cbackground: #f5f5fe;
+  --cgray: #666666;
+  --cwhite: white;
+  --cblack: #2e2d2d;
+  --cborder: #e6e6ed;
+
+  --radius: .5rem;
+
+  // Spacing
+  --sxs: .5rem;
+  --ssm: 1.5rem;
+  --smd: 3rem;
+  --slg: 6rem;
+  --sxl: 9rem;
+
+  // Fonts
+  --fprimary: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
+
+$font-styleguide: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+  'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';

@@ -1,0 +1,12 @@
+.o-stlgGrid {
+  > div {
+    height: 15rem;
+    &:nth-child(odd) {
+      background-color: var(--cl2primary);
+    }
+
+    &:nth-child(even) {
+      background-color: var(--cl1primary);
+    }
+  }
+}
